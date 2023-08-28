@@ -3,8 +3,9 @@ public:
     int MOD = 1e9 + 7;
     long long f(long long i, long long n){
         if(n==0)    return 1;
-        if(n%2==1)  return (i*f((i*i)%MOD,n/2))%MOD;
-        return f((i*i)%MOD,n/2)%MOD;
+        long long e = (i*i)%MOD;
+        if(n%2==1)  return (i*f(e,n/2))%MOD;
+        return f(e,n/2)%MOD;
     }
     
     int countGoodNumbers(long long n) {
